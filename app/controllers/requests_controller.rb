@@ -1,6 +1,6 @@
 class RequestsController < ApplicationController
   def index
-    @requests = Request.all
+    @requests = Request.order('created_at desc')
   end
   def show
     @request = Request.find(params[:id])
