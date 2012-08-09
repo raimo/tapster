@@ -1,0 +1,6 @@
+%table
+  %tbody
+    - @requests.each do |request|
+      %tr
+        %td= request.method
+        %td= request.fullpath
