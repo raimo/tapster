@@ -2,6 +2,9 @@
 %html
   %head
     %title= "Your Website"
-    %meta{ :content => "2", 'http-equiv' => "refresh" }
+    =#%meta{ :content => "2", 'http-equiv' => "refresh" }
+    =javascript_include_tag '//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js'
+    =javascript_include_tag :application
+    =stylesheet_link_tag :application
   %body
     = yield

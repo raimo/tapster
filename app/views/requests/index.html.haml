@@ -1,6 +1,8 @@
+%h1 Request Log
 %table
   %tbody
     - @requests.each do |request|
       %tr
-        %td= request.method
-        %td= request.fullpath
+        %td= link_to(request.method, request, 'data-target' => "request_#{request.id}")
+        %td= link_to(request.fullpath, request, 'data-target' => "request_#{request.id}")
+        %td{ :id => "request_#{request.id}"}
