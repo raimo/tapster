@@ -1,0 +1,7 @@
+www:
+    type: ruby
+    approot: app
+    postinstall: ./mysql.rb
+
+db:
+    type: mysql
