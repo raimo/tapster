@@ -20,7 +20,7 @@ begin
 rescue => e
     sleep(1)
     tries += 1;
-    retry if tries < 25
+    retry if tries < 30
 ensure
     db.close if db
     print "\n"
