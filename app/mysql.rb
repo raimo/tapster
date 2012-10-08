@@ -1,5 +1,4 @@
 #!/usr/bin/env ruby
-
 require 'rubygems' if RUBY_VERSION < '1.9'
 require 'mysql'
 require 'json'
@@ -19,7 +18,7 @@ begin
     db.query("CREATE DATABASE IF NOT EXISTS #{dbname}")
 rescue => e
     sleep(1)
-    tries += 1;
+    tries += 1
     retry if tries < 30
 ensure
     db.close if db
