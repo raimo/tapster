@@ -1,9 +1,6 @@
-td {
-  vertical-align: top;
-}
-td {
-  border-top: 1px solid #ccc;
-}
-table {
-  width: 100%;
-}
+/*
+ *
+ *= require_self
+ *= require_tree .
+ *
+ */

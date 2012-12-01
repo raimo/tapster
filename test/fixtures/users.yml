@@ -2,11 +2,6 @@
 
 one:
   id: 1
-  name: David Heinemeier Hansson
-  facebook_id: 
-  email: david@rubyonrails.org
-
-two:
-  name: MyString
-  facebook_id: MyString
-  email: MyString
+  name: Raimo Tuisku
+  facebook_id: raimo.tuisku
+  email: raimo.tuisku@gmail.com

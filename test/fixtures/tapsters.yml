@@ -1,6 +1,7 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
+  id: 1
   identifier: ab44e0c04ca7a904c54a89170f5193ea8d476c9a
   question: I was offered an iPhone 4S for $250, should I buy it?
   user_id: 1
