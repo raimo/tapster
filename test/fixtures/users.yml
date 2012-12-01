@@ -1,0 +1,12 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  id: 1
+  name: David Heinemeier Hansson
+  facebook_id: 
+  email: david@rubyonrails.org
+
+two:
+  name: MyString
+  facebook_id: MyString
+  email: MyString
