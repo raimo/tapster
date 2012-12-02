@@ -1,0 +1,12 @@
+.tapster
+  .metadata
+    =@tapster.user.name
+    asked on
+    =l @tapster.created_at, :format => :short
+  .question
+    =@tapster.question
+  .controls
+    %table
+      %tbody
+        %tr
+          =render :partial => 'options/option', :collection => @tapster.options

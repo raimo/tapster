@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+yes:
+  text: 'Yes'
+  tapster_id: 1
+  position: 0
+
+no:
+  text: 'No'
+  tapster_id: 1
+  position: 1

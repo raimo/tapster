@@ -1,0 +1,10 @@
+%h1= "#{request.method} #{request.fullpath}"
+
+%table
+  %tbody
+    - params.each do |k,v|
+      %tr
+        %td= k
+        %td= v
+
+%pre= request.body.read
