@@ -5,4 +5,5 @@ Endpoint::Application.routes.draw do
   get '/auth/facebook/callback' => 'sessions#create'
   get '/logout' => 'sessions#destroy'
   get '/users/:id' => 'users#show', :as => 'user'
+  get '/tapsters' => 'tapsters#index', :as => 'tapsters'
 end

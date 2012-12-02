@@ -1,4 +1,7 @@
 %td
-  .option
-    =option.text
+  - if option.owned_by?(current_user)
+    = "#{option.text} - #{option.votes.count} votes"
+  - else
+    .option.button
+      =link_to(option.text, '')
 

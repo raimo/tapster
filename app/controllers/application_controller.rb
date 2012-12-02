@@ -44,6 +44,7 @@ class ApplicationController < ActionController::Base
     p values
     render :json => values, :status => code
   end
+
   def find_tapsters
     @tapsters = current_user.try(:tapsters)
   end

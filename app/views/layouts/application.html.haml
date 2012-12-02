@@ -10,13 +10,12 @@
   %body
     %div{ 'data-facebook-app-id' => ENV['FACEBOOK_APP_ID'] }
     .header
-      .logo
-        Tapster.
+      = link_to('Tapster', root_path, :class => 'logo')
       .left-header
         - if logged_in?
-          You have 
+          (
           = link_to(@tapsters.size, tapsters_path)
-          tapsters.
+          )
 
       .right-header
         - if logged_in?
