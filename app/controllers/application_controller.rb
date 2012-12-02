@@ -46,7 +46,7 @@ class ApplicationController < ActionController::Base
   end
 
   def find_tapsters
-    @tapsters = current_user.try(:tapsters)
+    @tapsters = Tapster.all
   end
 
 end

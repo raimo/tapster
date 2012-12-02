@@ -10,6 +10,10 @@ class VotesController < ApplicationController
       vote.user_id = user.id
       vote.save!
     end
-    render :json => { :vote => vote.to_json, :options => tapster.options.map{|o| {:id => o.id, :count => o.vote_count} }}
+    render :json => {
+      :vote => vote.to_json,
+      :options => tapster.options.map{|o| {:id => o.id, :count => o.vote_count} },
+      :location => tapsters_url
+    }
   end
 end

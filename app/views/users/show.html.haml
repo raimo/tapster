@@ -5,7 +5,7 @@
         Picture
       %td
         Name
-      %td
+      %td{:width => '60%'}
         Tags
   %tbody
     - @user.friendships.limit(10).each do |friendship|
