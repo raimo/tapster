@@ -1,10 +1,11 @@
+= if logged_in?
+  You have 
+  = @tapsters.size
+  tapsters.
+
 .tapster
-  .header
-    New tapster
-  .question
-    %input{ :placeholder  => 'What would you like to know?' }
-  .controls
-    %table
-      %tbody
-        %tr
-          %input
+  = form_for(@tapster) do
+    .question
+      %textarea{ placeholder: 'What would you like to know?' }
+    .controls
+      %input{ type: 'submit' }
