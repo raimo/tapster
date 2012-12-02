@@ -1,8 +1,9 @@
 .tapster
   .metadata
     =@tapster.user.name
-    asked on
-    =l @tapster.created_at, :format => :short
+    asked
+    =distance_of_time_in_words(@tapster.created_at, Time.now)
+    ago
   .question
     =@tapster.question
   .controls
