@@ -1,6 +1,6 @@
 www:
     type: ruby
-    approot: app
+    approot: .
     postinstall: ./mysql.rb
 
 db:
