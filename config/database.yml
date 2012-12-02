@@ -19,7 +19,11 @@ test:
   timeout: 5000
 
 production:
-  adapter: sqlite3
-  database: db/production.sqlite3
+  adapter: mysql
+  database: test
   pool: 5
   timeout: 5000
+  host: <%= env['DOTCLOUD_DB_MYSQL_HOST'] %>
+  port: env['DOTCLOUD_DB_MYSQL_PORT'] %>
+  username: <%= env['DOTCLOUD_DB_MYSQL_LOGIN'] %>
+  password: <%= env['DOTCLOUD_DB_MYSQL_PASSWORD'] %>
