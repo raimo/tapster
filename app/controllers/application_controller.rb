@@ -1,8 +1,8 @@
 class ApplicationController < ActionController::Base
 
   protect_from_forgery
-  before_filter :path_format, :find_tapsters
   helper_method :logged_in?, :current_user
+  before_filter :path_format, :find_tapsters
   protected
 
   def path_format

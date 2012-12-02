@@ -1,15 +1,11 @@
 $(function () {
-  $('#tag1').tagsInput({
-    width:'90%',
-    height:'70px',
-  });
-  $('form:first').keypress(function (e) {
+  $('form').keypress(function (e) {
     if (e.which == 13) {
       e.preventDefault();
-      $('form:first').submit();
+      $(this).submit();
     }
   });
-  $('form:first').submit(function (data) {
+  $('form').submit(function (data) {
     var form = $(this);
     var errorContainer = form.find('.errors:first');
     $.ajax({
@@ -17,7 +13,9 @@ $(function () {
       url: form.attr('action'),
       data: form.serialize()
     }).done(function (data) {
-      window.location = data.location;
+      if (data.location) {
+        window.location = data.location;
+      }
     }).fail(function (d) {
       var data = JSON.parse(d.responseText);
       errorContainer.html('');
@@ -30,4 +28,21 @@ $(function () {
     });
     return false;
   });
+  $('.taggables').tagsInput({
+    width:'90%',
+    height:'70px',
+    onChange: function(e) {
+      var form = $(e).parents('form:first');
+
+      if ($(e).data('loaded')) {
+        if (form.data('first-change') === 'yes') {
+          form.data('first-change', 'no');
+        } else {
+          $(e).parents('form:first').submit();
+        }
+      }
+    }
+  });
+  $('.taggables').data('loaded', 'true');
+
 });

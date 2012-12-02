@@ -6,4 +6,7 @@ class Option < ActiveRecord::Base
   def owned_by?(user)
     self.tapster.user.id == user.id
   end
+  def vote_count
+    self.votes.count
+  end
 end

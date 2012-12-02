@@ -4,5 +4,5 @@
       = "#{option.text}&nbsp;(#{option.votes.count})".html_safe
   - else
     .option.button
-      =link_to(option.text, "/options/#{option.id}/votes")
+      =link_to(option.text, "/tapsters/#{option.tapster.identifier}/options/#{option.id}/votes", :method => 'post')
 

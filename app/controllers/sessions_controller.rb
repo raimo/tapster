@@ -10,12 +10,16 @@ class SessionsController < ApplicationController
         user.oauth_expires_at = Time.at(auth.credentials.expires_at)
         user.save!
       end
-      friends = JSON.parse(RestClient.get("https://graph.facebook.com/me/friends?access_token=#{user.oauth_token}")).try(:[], 'data')
+      friends = JSON.parse(RestClient.get("https://graph.facebook.com/me/friends?access_token=#{user.oauth_token}")).try(:[], 'data') || []
       friends.each do |friend|
-        User.where(:facebook_id => friend['id']).first_or_initialize.tap do |f|
+        f = User.where(:facebook_id => friend['id']).first_or_initialize.tap do |f|
           f.name ||= friend['name']
           f.email ||= friend['email']
           f.save
+        end
+        user.friendships.where(:friend_id => f.id).first_or_initialize.tap do |ff|
+          ff.friend_id = f.id
+          ff.save
         end
       end
       session[:user_id] = user.id

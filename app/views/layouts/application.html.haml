@@ -6,8 +6,8 @@
     =yield :meta
     =javascript_include_tag '//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js'
     =javascript_include_tag :application
-    =javascript_include_tag 'http://www.asual.com/jquery/address/samples/state/jquery.address-1.5.min.js'
-    =javascript_include_tag 'http://xoxco.com/projects/code/tagsinput/jquery.tagsinput.js'
+    -#javascript_include_tag 'http://www.asual.com/jquery/address/samples/state/jquery.address-1.5.min.js'
+    =javascript_include_tag 'jquery.tagsinput.js'
     =stylesheet_link_tag 'http://xoxco.com/projects/code/tagsinput/jquery.tagsinput.css'
     =stylesheet_link_tag :application
   %body
@@ -22,7 +22,7 @@
 
       .right-header
         - if logged_in?
-          = link_to(current_user.try(:name), user_path(current_user))
+          = link_to(current_user.try(:name), user_path)
           = '::'
           = link_to('Log out', '/logout')
         - else

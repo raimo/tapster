@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121202141049) do
+ActiveRecord::Schema.define(:version => 20121202160240) do
 
   create_table "friendships", :force => true do |t|
     t.integer  "user_id"
@@ -64,6 +64,7 @@ ActiveRecord::Schema.define(:version => 20121202141049) do
     t.datetime "updated_at",       :null => false
     t.string   "oauth_token"
     t.datetime "oauth_expires_at"
+    t.string   "login_token"
   end
 
   create_table "votes", :force => true do |t|

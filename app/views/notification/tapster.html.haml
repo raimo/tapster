@@ -1,0 +1,17 @@
+.tapster
+  .metadata
+    =@tapster.user.name
+    asked
+    =distance_of_time_in_words(@tapster.created_at, Time.now)
+    ago
+  .question
+    =@tapster.question
+  - if @tapster.tags
+    .tags
+      Tags:
+      %strong=@tapster.tags.split(',').join(', ')
+  .controls
+    %table
+      %tbody
+        %tr
+          =render :partial => 'options/option', :collection => @tapster.options

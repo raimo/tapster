@@ -1,2 +1,18 @@
-
+%table{:width => '100%'}
+  %thead
+    %tr
+      %td
+        Picture
+      %td
+        Name
+      %td
+        Tags
+  %tbody
+    - @user.friendships.limit(10).each do |friendship|
+      %tr
+        %td= image_tag("https://graph.facebook.com/#{friendship.friend.facebook_id}/picture")
+        %td= friendship.friend.name
+        %td
+          = form_for(friendship) do |f|
+            = f.text_field :tags, :class =>"taggables"
 
