@@ -8,13 +8,22 @@
     =javascript_include_tag :application
     =stylesheet_link_tag :application
   %body
-    - if logged_in?
-      Logged in as
-      = current_user.try(:name)
-    - else
-      #sign_in
-        Login
     %div{ 'data-facebook-app-id' => ENV['FACEBOOK_APP_ID'] }
+    .header
+      .left-header
+        - if logged_in?
+          You have 
+          = @tapsters.size
+          tapsters.
+
+      .right-header
+        - if logged_in?
+          = link_to(current_user.try(:name), user_path(current_user))
+          = '::'
+          = link_to('Log out', '/logout')
+        - else
+          #sign_in
+            = image_tag('fb_login_icon.gif')
     %h1 Tapster.
     #container
       = yield

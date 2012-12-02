@@ -14,3 +14,13 @@ body {
   margin-bottom: 20px;
   overflow: auto;
 }
+.header {
+  overflow: auto;
+  .left-header {
+    float: left;
+  }
+  .right-header {
+    float: right;
+  }
+}
+

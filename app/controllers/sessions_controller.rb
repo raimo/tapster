@@ -14,4 +14,8 @@ class SessionsController < ApplicationController
     end
     redirect_to params[:return] || session[:return] || root_url
   end
+  def destroy
+    session[:user_id] = nil
+    redirect_to params[:return] || session[:return] || root_url
+  end
 end

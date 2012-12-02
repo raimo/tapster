@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
 
   protect_from_forgery
-  before_filter :path_format
+  before_filter :path_format, :find_tapsters
   helper_method :logged_in?, :current_user
   protected
 
@@ -44,4 +44,8 @@ class ApplicationController < ActionController::Base
     p values
     render :json => values, :status => code
   end
+  def find_tapsters
+    @tapsters = current_user.try(:tapsters)
+  end
+
 end
