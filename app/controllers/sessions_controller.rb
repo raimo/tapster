@@ -4,7 +4,7 @@ class SessionsController < ApplicationController
     p auth
     if auth 
       user = User.where(:facebook_id => auth.uid).first_or_initialize.tap do |user|
-        user.uid = auth.uid
+        user.facebook_id = auth.uid
         user.name = auth.info.name
         user.oauth_token = auth.credentials.token
         user.oauth_expires_at = Time.at(auth.credentials.expires_at)

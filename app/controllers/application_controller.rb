@@ -2,7 +2,7 @@ class ApplicationController < ActionController::Base
 
   protect_from_forgery
   before_filter :path_format
-  helper_method :logged_in?
+  helper_method :logged_in?, :current_user
   protected
 
   def path_format
@@ -10,11 +10,14 @@ class ApplicationController < ActionController::Base
   end
 
   def current_user
-    @current_user ||= User.find_by_facebook_id(session[:user_id]) if session[:user_id]
+    if session[:user_id]
+      @current_user ||= User.find_by_id(session[:user_id])
+    end
+    @current_user
   end
 
   def logged_in?
-    current_user
+    !!current_user
   end
 
   def login_required
