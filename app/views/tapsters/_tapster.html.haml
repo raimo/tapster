@@ -1,6 +1,6 @@
-%tr
+%tr.listing
   %td
-    =tapster.question
+    =link_to(truncate(tapster.question, :length => 30), tapster_path(tapster))
   %td
     =distance_of_time_in_words(tapster.created_at, Time.now)
     ago

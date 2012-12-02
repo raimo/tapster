@@ -1,6 +1,6 @@
 %td
   - if option.owned_by?(current_user)
-    .option.button
+    .option.button.admin
       = "#{option.text}&nbsp;(#{option.votes.count})".html_safe
   - else
     .option.button
