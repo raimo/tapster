@@ -21,7 +21,6 @@ test:
 production:
   adapter: mysql
   database: test
-  pool: 5
   timeout: 5000
   host: <%= ENV['DOTCLOUD_DB_MYSQL_HOST'] %>
   port: <%= ENV['DOTCLOUD_DB_MYSQL_PORT'] %>
