@@ -13,6 +13,6 @@
         %td= image_tag("https://graph.facebook.com/#{friendship.friend.facebook_id}/picture")
         %td= friendship.friend.name
         %td
-          = form_for(friendship) do |f|
+          = form_for(friendship, :class => 'people') do |f|
             = f.text_field :tags, :class =>"taggables"
 

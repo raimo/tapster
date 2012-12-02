@@ -5,10 +5,9 @@ $(function () {
       $(this).submit();
     }
   });
-  $('.vote a').click(function (e) {
+  $('.vote > a').click(function (e) {
     $.post($(this).attr('href'), function (data) {
       for (var i = 0; i<data.options.length; i++) {
-        console.log(option);
         var option = data.options[i];
         var obj = $('#option' + option.id);
         obj.addClass('admin');
@@ -32,7 +31,6 @@ $(function () {
     }).fail(function (d) {
       var data = JSON.parse(d.responseText);
       errorContainer.html('');
-      console.log(data);
       for (var i=0; i < data.errors.length; i++) {
         var error = $('<div class="error" />');
         error.html(data.errors[i]);
@@ -45,14 +43,10 @@ $(function () {
     width:'90%',
     height:'70px',
     onChange: function(e) {
-      var form = $(e).parents('form:first');
+      var form = $(e).parents('form.people:first');
 
       if ($(e).data('loaded')) {
-        if (form.data('first-change') === 'yes') {
-          form.data('first-change', 'no');
-        } else {
-          $(e).parents('form:first').submit();
-        }
+        //$(e).parents('form:first').submit();
       }
     }
   });
