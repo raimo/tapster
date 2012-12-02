@@ -8,7 +8,7 @@
       %td{:width => '60%'}
         Tags
   %tbody
-    - @user.friendships.limit(10).each do |friendship|
+    - @friends.each do |friendship|
       %tr
         %td= image_tag("https://graph.facebook.com/#{friendship.friend.facebook_id}/picture")
         %td= friendship.friend.name

@@ -10,6 +10,10 @@
     .tags
       Tags:
       %strong=@tapster.tags.split(',').join(', ')
+    .people-to-send
+      Recipients:
+      %strong
+        =@recipients.map(&:email).join(',')
   .controls
     %table
       %tbody
