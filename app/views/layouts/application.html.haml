@@ -13,6 +13,7 @@
     - else
       #sign_in
         Login
+    %div{ 'data-facebook-app-id' => ENV['FACEBOOK_APP_ID'] }
     %h1 Tapster.
     #container
       = yield

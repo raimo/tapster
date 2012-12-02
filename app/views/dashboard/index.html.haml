@@ -4,8 +4,8 @@
   tapsters.
 
 .tapster
-  = form_for(@tapster) do
+  = form_for(@tapster) do |f|
     .question
-      %textarea{ placeholder: 'What would you like to know?' }
+      = f.text_area(:question, placeholder: 'What would you like to know?')
     .controls
-      %input{ type: 'submit' }
+      = submit_tag('Tap it!')
