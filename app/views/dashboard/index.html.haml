@@ -4,4 +4,4 @@
     = f.text_area(:question, placeholder: 'What would you like to know?', rows: nil, cols: nil, :class => 'question', :style => 'width: 90%')
     %input{ :name => 'tapster[tags]', :id=>"tag1", :value=>"business,ruby,social"}
     .controls
-      = submit_tag('Tap it!')
+      = submit_tag('Tap it!', :class => 'button')
