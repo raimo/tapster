@@ -1,8 +1,8 @@
 %td
   - if option.owned_by?(current_user) || option.tapster.options.any? {|o| o.votes.map(&:user).include?(current_user) }
-    .option.button.admin
+    .option.button.admin{:id => "option#{option.id}"}
       = "#{option.text}&nbsp;(#{option.votes.count})".html_safe
   - else
-    .option.button
+    .option.button.vote{:id => "option#{option.id}"}
       =link_to(option.text, "/tapsters/#{option.tapster.identifier}/options/#{option.id}/votes?login_token=#{current_user.login_token}", :method => 'post')
 

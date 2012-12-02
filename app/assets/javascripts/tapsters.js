@@ -5,6 +5,19 @@ $(function () {
       $(this).submit();
     }
   });
+  $('.vote a').click(function (e) {
+    $.post($(this).attr('href'), function (data) {
+      for (var i = 0; i<data.options.length; i++) {
+        console.log(option);
+        var option = data.options[i];
+        var obj = $('#option' + option.id);
+        obj.addClass('admin');
+        obj.removeClass('vote');
+        obj.html(option.text + '&nbsp;' + '(' + option.count + ')');
+      }
+    });
+    return false;
+  });
   $('form').submit(function (data) {
     var form = $(this);
     var errorContainer = form.find('.errors:first');

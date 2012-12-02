@@ -44,6 +44,9 @@ a {
 }.button:active {
   top:1px;
 }
+.admin:hover {
+  background: inherit !important;
+}
 
 a:hover {
   text-shadow: 0 0 11px #FFf;

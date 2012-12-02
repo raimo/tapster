@@ -12,7 +12,7 @@ class VotesController < ApplicationController
     end
     render :json => {
       :vote => vote.to_json,
-      :options => tapster.options.map{|o| {:id => o.id, :count => o.vote_count} },
+      :options => tapster.options.map{|o| {:id => o.id, :count => o.vote_count, :text => o.text} },
       :location => tapsters_url
     }
   end
