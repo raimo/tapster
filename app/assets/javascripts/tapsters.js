@@ -1,5 +1,15 @@
 $(function () {
-  $('form').submit(function (data) {
+  $('#tag1').tagsInput({
+    width:'90%',
+    height:'70px',
+  });
+  $('form:first').keypress(function (e) {
+    if (e.which == 13) {
+      e.preventDefault();
+      $('form:first').submit();
+    }
+  });
+  $('form:first').submit(function (data) {
     var form = $(this);
     var errorContainer = form.find('.errors:first');
     $.ajax({

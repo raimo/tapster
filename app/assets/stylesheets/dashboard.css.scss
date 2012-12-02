@@ -50,7 +50,7 @@ a:hover {
 }
 #container {
   color: black;
-  background-color: #9286E3;
+  background-color: white;
   margin-left: 20px;
   margin-right: 20px;
   margin-top: 20px;
@@ -81,13 +81,13 @@ a:hover {
   font-size: smaller;
 }
 .question {
-  font-size: larger;
+  font-size: large;
   background-color:#fff;
-  padding: 30px;
+  padding: 10px;
   -moz-border-radius: 6px;
   -webkit-border-radius: 6px;
   border-radius:6px;
-  border: 3px inset #9286E3;
+  margin-left: 30px;
 }
 .clear {
   clear: both;

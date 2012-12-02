@@ -1,0 +1,8 @@
+%tr
+  %td
+    =tapster.question
+  %td
+    =distance_of_time_in_words(tapster.created_at, Time.now)
+    ago
+  %td
+    =render :partial => 'options/option', :collection => tapster.options

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121202092020) do
+ActiveRecord::Schema.define(:version => 20121202120318) do
 
   create_table "options", :force => true do |t|
     t.string   "text"
@@ -45,6 +45,7 @@ ActiveRecord::Schema.define(:version => 20121202092020) do
     t.integer  "user_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.string   "tags"
   end
 
   create_table "users", :force => true do |t|

@@ -1,8 +1,8 @@
 class Tapster < ActiveRecord::Base
-  attr_accessible :identifier, :question, :user_id
+  attr_accessible :identifier, :question, :user_id, :tags
   belongs_to :user
   has_many :options, :order => :position
-  validates_presence_of :question
+  validates_presence_of :question, :tags
   before_validation :generate_identifier, :on => :create
   before_validation :generate_options, :on => :create
   def to_param
