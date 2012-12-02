@@ -7,6 +7,6 @@
   = form_for(@tapster) do |f|
     .errors
     .question
-      = f.text_area(:question, placeholder: 'What would you like to know?')
+      = f.text_area(:question, placeholder: 'What would you like to know?', rows: nil, cols: nil)
     .controls
       = submit_tag('Tap it!')
