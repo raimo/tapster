@@ -38,4 +38,10 @@ class ApplicationController < ActionController::Base
   def store_target_location
     session[:return_to] = request.fullpath
   end
+
+  def respond(code, values)
+    values['status'] ||= 200
+    p values
+    render :json => values, :status => values['status']
+  end
 end
