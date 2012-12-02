@@ -5,6 +5,7 @@
 
 .tapster
   = form_for(@tapster) do |f|
+    .errors
     .question
       = f.text_area(:question, placeholder: 'What would you like to know?')
     .controls

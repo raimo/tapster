@@ -40,8 +40,8 @@ class ApplicationController < ActionController::Base
   end
 
   def respond(code, values)
-    values['status'] ||= 200
+    values['status'] = code
     p values
-    render :json => values, :status => values['status']
+    render :json => values, :status => code
   end
 end
