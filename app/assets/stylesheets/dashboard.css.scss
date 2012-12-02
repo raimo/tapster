@@ -2,8 +2,10 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 body {
-  background-color: black;
+  background-color: #224;
   color: white;
+  margin: 0;
+  padding: 0;
 }
 #container {
   color: black;
@@ -15,7 +17,22 @@ body {
   overflow: auto;
 }
 .header {
+  margin: 0;
+  padding: 5px;
+  font-size: small;
+  background-color: black;
   overflow: auto;
+  a {
+    color: red;
+    text-decoration: none;
+  }
+  .logo {
+    color: white;
+    font-weight: bolder;
+    text-shadow: 0 0 11px #FFf;
+    float: left;
+    margin-right: 30px;
+  }
   .left-header {
     float: left;
   }

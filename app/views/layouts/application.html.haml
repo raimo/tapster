@@ -10,10 +10,12 @@
   %body
     %div{ 'data-facebook-app-id' => ENV['FACEBOOK_APP_ID'] }
     .header
+      .logo
+        Tapster.
       .left-header
         - if logged_in?
           You have 
-          = @tapsters.size
+          = link_to(@tapsters.size, tapsters_path)
           tapsters.
 
       .right-header
@@ -24,6 +26,5 @@
         - else
           #sign_in
             = image_tag('fb_login_icon.gif')
-    %h1 Tapster.
     #container
       = yield
