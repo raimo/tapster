@@ -9,7 +9,7 @@ class TapstersController < ApplicationController
   def show
     @tapster = Tapster.find_by_identifier!(params[:id])
     @recipients = []
-    @tapster.tags.split(',').each do |tag|
+    @tapster.tags.to_s.split(',').each do |tag|
       @recipients += Friendship.all(
         :conditions => ['tags LIKE ?', "%#{tag}%"]).
         map(&:friend).compact.map(&:email).compact
