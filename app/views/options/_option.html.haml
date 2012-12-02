@@ -4,6 +4,5 @@
       = "#{option.text}&nbsp;(#{option.votes.count})".html_safe
   - else
     .option.button
-      =form_tag(:method => :post, :url => "/tapsters/#{option.tapster.identifier}/options/#{option.id}/votes?login_token=#{current_user.login_token}") do |f|
-        =submit_tag option.text
+      =link_to(option.text, "/tapsters/#{option.tapster.identifier}/options/#{option.id}/votes?login_token=#{current_user.login_token}", :method => 'post')
 
