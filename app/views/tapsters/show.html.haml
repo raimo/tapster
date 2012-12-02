@@ -1,6 +1,9 @@
 .tapster
   .metadata
-    =@tapster.user.name
+    -if current_user.id == @tapster.user.id
+      You
+    -else
+      =@tapster.user.name
     asked
     =distance_of_time_in_words(@tapster.created_at, Time.now)
     ago
