@@ -9,6 +9,8 @@ jQuery ->
 
 window.fbAsyncInit = ->
   FB.init(appId: $('[data-facebook-app-id]').data('facebook-app-id'), cookie: true)
+  FB.getLoginStatus (response) ->
+    $('#fb-root').find('iframe').attr('title', 'testing')
 
   $('#sign_in').click (e) ->
     e.preventDefault()
