@@ -1,6 +1,7 @@
 .tapster
   = form_for(@tapster) do |f|
     .errors
+    = f.label(:question, 'What would you like to know?', :style => 'display:none;')
     = f.text_area(:question, placeholder: 'What would you like to know?', rows: nil, cols: nil, :class => 'question', :style => 'width: 90%')
     %input{ :name => 'tapster[tags]', :class =>"taggables", :value=>"business,ruby,social"}
     .controls
